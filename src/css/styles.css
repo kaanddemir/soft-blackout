@@ -1,0 +1,28 @@
+/* Base class for redacted text */
+.blackout-redacted {
+  background-color: #000 !important;
+  color: #000 !important;
+  padding: 0 0;
+  /* Removed vertical padding */
+  border-radius: 0px;
+  /* Sharper edges looks more like redacted doc */
+  cursor: default;
+  user-select: none;
+  /* Prevent selection of the text inside content */
+  /* box-shadow: 0 0 0 1px #000; Removed shadow to reduce thickness */
+  line-height: 1em;
+  /* Force tighter line height */
+  position: relative;
+  z-index: 9999;
+}
+
+/* Optional: Add a class for the cursor when redaction mode is on to the body */
+body.blackout-mode-active {
+  cursor: crosshair !important;
+  /* Or specific cursor if needed */
+}
+
+/* Ensure we don't break layout too much, though inline-block might be needed for some contexts */
+.blackout-redacted {
+  display: inline;
+}
