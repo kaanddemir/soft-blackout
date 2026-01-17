@@ -6,6 +6,8 @@
 
 <p align="center">
   <strong>Selectively redact text on web pages.</strong>
+  <br>
+  <em>Privacy-respecting • Runs only when you need it</em>
 </p>
 
 ---
@@ -16,6 +18,7 @@
 - **Auto Redact** — Automatically create redaction patterns on any page
 - **Blackout All** — Redact entire page content with one click
 - **Reset** — Easily restore the original page content
+- **Privacy-First** — Only runs when you explicitly interact with the extension
 
 ## Installation
 
@@ -65,9 +68,13 @@ Soft Blackout/
 
 ## Permissions
 
-- `activeTab` — Access to the current tab
-- `scripting` — Inject content scripts
-- `storage` — Save user preferences
+This extension requests **minimal permissions** and follows a privacy-respecting approach:
+
+- `activeTab` — Access only the current tab, and only after you interact with the extension
+- `scripting` — Dynamically inject scripts when you activate the extension (no automatic injection)
+- `storage` — Save your toggle preference locally
+
+> **Note:** Unlike many extensions, Soft Blackout does NOT inject any scripts automatically. It only runs when you explicitly click a button in the popup.
 
 ## Design
 
@@ -75,7 +82,12 @@ Minimal icon design featuring a black redaction bar on a cream background, repre
 
 ## Privacy
 
-This extension does not collect any personal data. See [PRIVACY.md](PRIVACY.md) for details.
+This extension:
+- Does **not** collect any personal data
+- Does **not** run automatically on any page
+- Only accesses the current tab **after a user gesture**
+
+See [PRIVACY.md](PRIVACY.md) for the full privacy policy.
 
 ## License
 
