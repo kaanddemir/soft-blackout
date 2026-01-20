@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**Last Updated:** January 17, 2026
+**Last Updated:** January 21, 2026
 
 ## Soft Blackout Chrome Extension
 
