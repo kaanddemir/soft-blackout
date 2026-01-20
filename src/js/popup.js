@@ -29,7 +29,9 @@ async function ensureContentScriptInjected() {
       tab.url?.startsWith('chrome-extension://') ||
       tab.url?.startsWith('about:') ||
       tab.url?.startsWith('edge://') ||
-      tab.url?.startsWith('file://')) {
+      tab.url?.startsWith('file://') ||
+      tab.url?.includes('chrome.google.com/webstore') ||
+      tab.url?.includes('chromewebstore.google.com')) {
       console.log("Cannot inject into restricted page:", tab.url);
       showStatus("Cannot run on this page", true);
       return false;
