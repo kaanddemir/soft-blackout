@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Soft Blackout",
     "version": "1.1.0",
-    "description": "Selectively redact text on web pages.",
+    "description": "Hide sensitive content with intelligent redaction modes. Privacy-first, runs locally.",
     "permissions": [
         "activeTab",
         "scripting",
