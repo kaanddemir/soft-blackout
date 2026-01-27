@@ -1,122 +1,72 @@
 # Soft Blackout
 
-<p align="center">
+<div align="center">
   <img src="icons/icon128.png" alt="Soft Blackout Logo" width="128" height="128">
-</p>
+</div>
 
-<p align="center">
-  <strong>Selectively redact text on web pages.</strong>
-  <br>
-  <em>Privacy-respecting • Runs only when you need it</em>
-</p>
+## One-line Value Proposition
+Selectively redact text on web pages with privacy-focused, intelligent tools.
 
----
+## Overview
+Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide sensitive content or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
 
 ## Features
+- **Smart Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
+- **Manual Control**: Click and drag to selectively redact specific sentences or paragraphs.
+- **Customizable Intensity**: Adjust redaction levels (Light, Medium, Heavy) to suit your needs.
+- **Smart Filters**: Choose to keep proper nouns, long words, or numbers visible while redacting the rest.
+- **Blackout All**: A single-click option to completely obscure everything on the page.
+- **History Management**: Full Undo and Redo capabilities to experiment fearlessly.
+- **Interactive Reveal**: Double-click any redacted area to reveal the text underneath.
 
-- **Manual Mode** — Click and drag to select text you want to redact
-- **Smart Redact** — Intelligent redaction with customizable settings
-  - Three modes: Poetry, Privacy, and Random
-  - Intensity presets: Light, Medium, Heavy
-  - Keep Visible filters for proper nouns, long words, and numbers
-- **Blackout All** — Redact entire page content with one click (including links)
-- **Undo/Redo** — Easily revert or reapply redaction actions
-- **Reset** — Restore the original page content
-- **Double-click to Reveal** — Double-click any redacted text to un-redact it
-- **Privacy-First** — Only runs when you explicitly interact with the extension
+## How It Works
+1. **Activate**: Click the Soft Blackout icon in your browser toolbar.
+2. **Choose Mode**:
+   - Toggle **Manual Mode** to redact by selecting text with your mouse.
+   - Use **Smart Redact** to apply automatic algorithms based on your settings.
+3. **Customize**: Click the gear icon to adjust intensity and filters (e.g., maintain names or dates).
+4. **Interact**: Double-click redacted blocks to peek at the content, or use Undo/Redo to fine-tune the result.
 
-## Installation
-
-### From Source (Developer Mode)
-
-1. Clone or download this repository
-2. Open Chrome and navigate to `chrome://extensions`
-3. Enable **Developer mode** (toggle in top right)
-4. Click **Load unpacked**
-5. Select the `Soft Blackout` folder
-
-## Usage
-
-1. Click the Soft Blackout icon in your Chrome toolbar
-2. Choose your mode:
-   - Toggle **Manual Mode** to select and redact text by clicking and dragging
-   - Click **Smart Redact** for intelligent automatic redaction
-   - Click the ⚙️ button to open **Redaction Settings**:
-     - **Mode**: Poetry (for blackout poetry), Privacy (hide sensitive data), Random
-     - **Intensity**: Light (25%), Medium (50%), Heavy (75%)
-     - **Keep Visible**: Proper nouns, Long words (4+ chars), Numbers & Dates
-   - Click **Blackout All** to redact everything on the page
-3. Use **Undo/Redo** buttons to revert or reapply actions
-4. Click **Reset** to restore the original page
-5. **Double-click** any redacted text to reveal it
-
-## Project Structure
-
-```
-Soft Blackout/
-├── manifest.json          # Extension configuration (Manifest V3)
-├── popup.html             # Popup UI with settings modal
-├── README.md              # This file
-├── PRIVACY.md             # Privacy policy
-├── icons/                 # Extension icons
-│   ├── icon16.png
-│   ├── icon32.png
-│   ├── icon48.png
-│   └── icon128.png
-└── src/
-    ├── css/
-    │   └── styles.css     # Content script styles
-    └── js/
-        ├── content.js     # Page content script (redaction logic)
-        └── popup.js       # Popup logic (settings, messaging)
-```
-
-## Technologies
-
-- **Manifest V3** — Latest Chrome extension API
-- **Vanilla JavaScript** — No external dependencies
-- **CSS3** — Modern styling with soft dark theme
-
-## Permissions
-
-This extension requests **minimal permissions** and follows a privacy-respecting approach:
-
-- `activeTab` — Access only the current tab, and only after you interact with the extension
-- `scripting` — Dynamically inject scripts when you activate the extension (no automatic injection)
-- `storage` — Save your toggle preference locally
-
-> **Note:** Unlike many extensions, Soft Blackout does NOT inject any scripts automatically. It only runs when you explicitly click a button in the popup.
-
-## What's New in v1.1.0
-
-- **Smart Redact Settings Modal** — Full customization for redaction
-- **Redaction Modes** — Poetry, Privacy, and Random modes
-- **Intensity Presets** — Quick selection with Light/Medium/Heavy buttons
-- **Keep Visible Filters** — Control what stays visible during redaction
-- **Undo/Redo System** — Full history support (up to 50 actions)
-- **Improved Blackout All** — Now includes links for complete page redaction
-- **Double-click to Reveal** — Quick un-redaction of individual words
-- **Version Display** — Shows current version in footer
-
-## Design
-
-Minimal icon design featuring a black redaction bar on a cream background, representing the core functionality of text redaction.
+## Use Cases
+- **Privacy Protection**: Obscure names, emails, and sensitive info before sharing screen captures.
+- **Content Focus**: Black out distractions to focus purely on the text that matters.
+- **Creative Writing**: Turn news articles or blog posts into unique pieces of blackout poetry.
+- **Testing**: Developers can use it to test UI layouts with variable text visibility.
 
 ## Privacy
+Soft Blackout is built with a strictly **privacy-first** architecture:
+- **Local Execution**: All processing happens locally in your browser. No data is ever sent to a server.
+- **No Tracking**: The extension collects absolutely no user data or analytics.
+- **On-Demand**: Scripts are only injected when you explicitly activate the extension, preserving your browser's performance and security.
+- See our [Privacy Policy](PRIVACY_POLICY.md) for more details.
 
-This extension:
-- Does **not** collect any personal data
-- Does **not** run automatically on any page
-- Only accesses the current tab **after a user gesture**
+## Tech Stack
+- **Manifest V3**: Compliant with the latest Chrome Extension standards for security and performance.
+- **Vanilla JavaScript**: Lightweight and fast, without heavy frameworks.
+- **CSS3**: Modern, aesthetic styling for a seamless user experience.
 
-See [PRIVACY.md](PRIVACY.md) for the full privacy policy.
+## Installation
+1. Clone or download this repository to your local machine.
+2. Open Chrome and navigate to `chrome://extensions`.
+3. Enable **Developer mode** using the toggle in the top right corner.
+4. Click **Load unpacked**.
+5. Select the `Soft Blackout` directory you just downloaded.
+
+## Roadmap
+- [ ] **Export to Image**: Direct feature to save the redacted page as a PNG.
+- [ ] **Custom Word Lists**: Add specific words/phrases to an "always redact" or "never redact" list.
+- [ ] **Theme Support**: Custom colors for redaction blocks (e.g., pixelated, blur, or colored bars).
+
+## Contributing
+Contributions are welcome! If you have ideas for improvements or bug fixes, please feel free to:
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/Extension`).
+3. Commit your changes (`git commit -m 'Add some Extension'`).
+4. Push to the branch (`git push origin feature/Extension`).
+5. Open a Pull Request.
 
 ## License
-
-MIT License — Feel free to use and modify.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-
-<p align="center">
-  Thanks for your support! ❤️
-</p>
+Built by heykaan.dev
