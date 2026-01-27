@@ -19,6 +19,10 @@ Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help 
 - **History Management**: Full Undo and Redo capabilities to experiment fearlessly.
 - **Interactive Reveal**: Double-click any redacted area to reveal the text underneath.
 
+## What's New in v1.1.1
+- **Turkish Language Support**: Soft Blackout is now fully localized in Turkish! The extension automatically detects your browser language.
+
+
 ## How It Works
 1. **Activate**: Click the Soft Blackout icon in your browser toolbar.
 2. **Choose Mode**:

@@ -33,7 +33,7 @@ async function ensureContentScriptInjected() {
       tab.url?.includes('chrome.google.com/webstore') ||
       tab.url?.includes('chromewebstore.google.com')) {
       console.log("Cannot inject into restricted page:", tab.url);
-      showStatus("Cannot run on this page", true);
+      showStatus(chrome.i18n.getMessage("msgCannotRun"), true);
       return false;
     }
 
@@ -60,7 +60,7 @@ async function ensureContentScriptInjected() {
     return true;
   } catch (error) {
     console.error("Failed to inject content script:", error);
-    showStatus("Reload page and try again", true);
+    showStatus(chrome.i18n.getMessage("msgReload"), true);
     return false;
   }
 }
@@ -85,7 +85,7 @@ async function sendMessageToTab(message) {
       return response;
     } catch (error) {
       console.error("Message failed:", error);
-      showStatus("Reload page and try again", true);
+      showStatus(chrome.i18n.getMessage("msgReload"), true);
       return false;
     }
   }
@@ -98,6 +98,15 @@ function getTabStateKey(tabId) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Localize the popup
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const message = chrome.i18n.getMessage(key);
+    if (message) {
+      element.textContent = message;
+    }
+  });
+
   const toggle = document.getElementById('toggleRedaction');
   const status = document.getElementById('status');
   const undoBtn = document.getElementById('undoBtn');
@@ -107,7 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const tabId = tab?.id;
 
   if (!tabId) {
-    showStatus("Cannot access tab", true);
+    showStatus(chrome.i18n.getMessage("msgCannotAccess"), true);
     return;
   }
 
@@ -310,7 +319,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   undoBtn.addEventListener('click', async () => {
     const response = await sendMessageWithHistoryUpdate({ action: "undo" });
     if (response && !response.success) {
-      showStatus(response.message || "Cannot undo", true);
+      showStatus(response.message || chrome.i18n.getMessage("msgCannotUndo"), true);
     }
   });
 
@@ -318,7 +327,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   redoBtn.addEventListener('click', async () => {
     const response = await sendMessageWithHistoryUpdate({ action: "redo" });
     if (response && !response.success) {
-      showStatus(response.message || "Cannot redo", true);
+      showStatus(response.message || chrome.i18n.getMessage("msgCannotRedo"), true);
     }
   });
 

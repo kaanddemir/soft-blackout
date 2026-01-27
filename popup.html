@@ -507,11 +507,11 @@
 
 <body>
   <header>
-    <h1>Soft Blackout</h1>
+    <h1 data-i18n="extensionName"></h1>
   </header>
 
   <div class="control-group">
-    <span class="section-label">Manual Mode</span>
+    <span class="section-label" data-i18n="manualMode"></span>
     <label class="switch">
       <input type="checkbox" id="toggleRedaction">
       <span class="slider"></span>
@@ -519,11 +519,10 @@
   </div>
 
   <div class="control-group" style="margin-bottom: 0;">
-    <span class="section-label">Page Actions</span>
+    <span class="section-label" data-i18n="pageActions"></span>
 
     <div class="btn-with-settings">
-      <button id="autoRedactBtn" class="btn-auto">
-        Smart Redact
+      <button id="autoRedactBtn" class="btn-auto" data-i18n="smartRedact">
       </button>
       <button id="settingsBtn" class="btn-settings" title="Redaction Settings">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -532,11 +531,9 @@
         </svg>
       </button>
     </div>
-    <button id="blackoutAllBtn" class="btn-auto">
-      Blackout All
+    <button id="blackoutAllBtn" class="btn-auto" data-i18n="blackoutAll">
     </button>
-    <button id="resetRedactBtn" class="btn-auto btn-reset">
-      Reset
+    <button id="resetRedactBtn" class="btn-auto btn-reset" data-i18n="reset">
     </button>
     <div class="history-controls">
       <button id="undoBtn" class="btn-history" disabled>
@@ -544,10 +541,10 @@
           <path
             d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z" />
         </svg>
-        Undo
+        <span data-i18n="undo"></span>
       </button>
       <button id="redoBtn" class="btn-history" disabled>
-        Redo
+        <span data-i18n="redo"></span>
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M18.4 10.6C16.55 8.99 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16c1.05-3.19 4.05-5.5 7.6-5.5 1.95 0 3.73.72 5.12 1.88L13 16h9V7l-3.6 3.6z" />
@@ -560,7 +557,7 @@
   <div class="modal-overlay" id="settingsModal">
     <div class="modal">
       <div class="modal-header">
-        <span class="modal-title">Redaction Settings</span>
+        <span class="modal-title" data-i18n="redactionSettings"></span>
         <button class="modal-close" id="closeModal">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -571,21 +568,21 @@
 
       <!-- Mode Selection -->
       <div class="settings-card">
-        <span class="settings-label">Redaction Mode</span>
+        <span class="settings-label" data-i18n="redactionMode"></span>
         <div class="mode-group">
-          <button class="mode-btn active" data-mode="poetry">Poetry</button>
-          <button class="mode-btn" data-mode="privacy">Privacy</button>
-          <button class="mode-btn" data-mode="random">Random</button>
+          <button class="mode-btn active" data-mode="poetry" data-i18n="btnPoetry"></button>
+          <button class="mode-btn" data-mode="privacy" data-i18n="btnPrivacy"></button>
+          <button class="mode-btn" data-mode="random" data-i18n="btnRandom"></button>
         </div>
       </div>
 
       <!-- Intensity Slider -->
       <div class="settings-card">
-        <span class="settings-label">Intensity</span>
+        <span class="settings-label" data-i18n="intensity"></span>
         <div class="preset-group">
-          <button class="preset-btn" data-value="25">Light</button>
-          <button class="preset-btn active" data-value="50">Medium</button>
-          <button class="preset-btn" data-value="75">Heavy</button>
+          <button class="preset-btn" data-value="25" data-i18n="btnLight"></button>
+          <button class="preset-btn active" data-value="50" data-i18n="btnMedium"></button>
+          <button class="preset-btn" data-value="75" data-i18n="btnHeavy"></button>
         </div>
         <!-- Hidden slider for logic compatibility -->
         <input type="range" min="10" max="90" value="50" id="intensitySlider" style="display: none;">
@@ -594,19 +591,19 @@
 
       <!-- Word Categories -->
       <div class="settings-card" style="margin-bottom: 0;">
-        <span class="settings-label">Keep Visible</span>
+        <span class="settings-label" data-i18n="keepVisible"></span>
         <div class="checkbox-group">
           <label class="checkbox-item">
             <input type="checkbox" id="keepProperNouns" checked>
-            <span>Proper Nouns (Names, Places)</span>
+            <span data-i18n="chkProperNouns"></span>
           </label>
           <label class="checkbox-item">
             <input type="checkbox" id="keepLongWords" checked>
-            <span>Long Words (4+ chars)</span>
+            <span data-i18n="chkLongWords"></span>
           </label>
           <label class="checkbox-item">
             <input type="checkbox" id="keepNumbers">
-            <span>Numbers & Dates</span>
+            <span data-i18n="chkNumbers"></span>
           </label>
         </div>
       </div>
@@ -614,17 +611,16 @@
 
     <!-- Smart Redact Button in Modal -->
     <div class="modal-footer">
-      <button id="modalRedactBtn" class="btn-auto">
-        Smart Redact
+      <button id="modalRedactBtn" class="btn-auto" data-i18n="smartRedact">
       </button>
     </div>
   </div>
 
   <div class="footer">
     <div id="status"></div>
-    Thanks for your support!
+    <span data-i18n="footerThanks"></span>
     <div style="margin-top: 4px;">
-      <span id="versionLabel" style="opacity: 0.5; font-size: 10px;">v1.0.0</span>
+      <span id="versionLabel" style="opacity: 0.5; font-size: 10px;">v1.1.1</span>
     </div>
   </div>
 
