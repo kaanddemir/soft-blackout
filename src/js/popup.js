@@ -32,7 +32,6 @@ async function ensureContentScriptInjected() {
       tab.url?.startsWith('file://') ||
       tab.url?.includes('chrome.google.com/webstore') ||
       tab.url?.includes('chromewebstore.google.com')) {
-      console.log("Cannot inject into restricted page:", tab.url);
       showStatus(chrome.i18n.getMessage("msgCannotRun"), true);
       return false;
     }
@@ -40,7 +39,6 @@ async function ensureContentScriptInjected() {
     // Check if already injected using ping mechanism
     const alreadyInjected = await isContentScriptInjected(tab.id);
     if (alreadyInjected) {
-      console.log("Content script already injected");
       return true;
     }
 
@@ -56,7 +54,6 @@ async function ensureContentScriptInjected() {
       files: ['src/js/content.js']
     });
 
-    console.log("Content script and styles injected successfully");
     return true;
   } catch (error) {
     console.error("Failed to inject content script:", error);
