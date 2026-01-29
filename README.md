@@ -4,9 +4,6 @@
   <img src="icons/icon128.png" alt="Soft Blackout Logo" width="128" height="128">
 </div>
 
-## One-line Value Proposition
-Selectively redact text on web pages with privacy-focused, intelligent tools.
-
 ## Overview
 Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide sensitive content or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
 
@@ -50,6 +47,11 @@ Soft Blackout is built with a strictly **privacy-first** architecture:
 - **CSS3**: Modern, aesthetic styling for a seamless user experience.
 
 ## Installation
+
+### From Chrome Web Store
+[Install Blackout](https://chromewebstore.google.com/detail/soft-blackout/oeefplhfabbdadpicjbgbiapoadppkpo)
+
+### Manual Installation
 1. Clone or download this repository to your local machine.
 2. Open Chrome and navigate to `chrome://extensions`.
 3. Enable **Developer mode** using the toggle in the top right corner.
