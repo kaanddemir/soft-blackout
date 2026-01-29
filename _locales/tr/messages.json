@@ -1,0 +1,86 @@
+{
+    "extensionName": {
+        "message": "Soft Blackout"
+    },
+    "extensionDescription": {
+        "message": "Hassas içerikleri akıllı modlarla gizle. Gizlilik odaklı, veriler cihazınızdan çıkmaz."
+    },
+    "manualMode": {
+        "message": "Elle Seç"
+    },
+    "pageActions": {
+        "message": "Sayfa Araçları"
+    },
+    "smartRedact": {
+        "message": "Akıllı Gizle"
+    },
+    "blackoutAll": {
+        "message": "Her Şeyi Gizle"
+    },
+    "reset": {
+        "message": "Temizle"
+    },
+    "undo": {
+        "message": "Geri Al"
+    },
+    "redo": {
+        "message": "Yinele"
+    },
+    "redactionSettings": {
+        "message": "Gizleme Ayarları"
+    },
+    "redactionMode": {
+        "message": "Gizleme Türü"
+    },
+    "btnPoetry": {
+        "message": "Şiir"
+    },
+    "btnPrivacy": {
+        "message": "Gizlilik"
+    },
+    "btnRandom": {
+        "message": "Rastgele"
+    },
+    "intensity": {
+        "message": "Seviye"
+    },
+    "btnLight": {
+        "message": "Az"
+    },
+    "btnMedium": {
+        "message": "Orta"
+    },
+    "btnHeavy": {
+        "message": "Çok"
+    },
+    "keepVisible": {
+        "message": "Bunlar Gizlenmesin"
+    },
+    "chkProperNouns": {
+        "message": "İsimler ve Yerler"
+    },
+    "chkLongWords": {
+        "message": "Uzun Kelimeler (4+ harf)"
+    },
+    "chkNumbers": {
+        "message": "Sayılar ve Tarihler"
+    },
+    "footerThanks": {
+        "message": "Destek olduğunuz için teşekkürler!"
+    },
+    "msgCannotRun": {
+        "message": "Bu sayfada çalışmıyor"
+    },
+    "msgReload": {
+        "message": "Sayfayı yenileyip tekrar dene"
+    },
+    "msgCannotAccess": {
+        "message": "Bu sekmeye erişemiyorum"
+    },
+    "msgCannotUndo": {
+        "message": "Geri alınacak bir şey yok"
+    },
+    "msgCannotRedo": {
+        "message": "Tekrar yapılacak bir şey yok"
+    }
+}

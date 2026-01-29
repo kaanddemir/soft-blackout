@@ -1,7 +1,5 @@
 // Guard against multiple injections
 if (window.__softBlackoutInjected) {
-    console.log('Soft Blackout already injected');
-} else {
     window.__softBlackoutInjected = true;
 
     let isRedactionMode = false;
@@ -646,7 +644,5 @@ if (window.__softBlackoutInjected) {
             }
         });
     }
-
-    console.log('Soft Blackout content script initialized');
 
 } // End of injection guard

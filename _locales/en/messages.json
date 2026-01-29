@@ -1,0 +1,88 @@
+{
+    "extensionName": {
+        "message": "Soft Blackout",
+        "description": "Name of the extension"
+    },
+    "extensionDescription": {
+        "message": "Hide sensitive content with intelligent redaction modes. Privacy-first, runs locally.",
+        "description": "Description of the extension"
+    },
+    "manualMode": {
+        "message": "Manual Mode"
+    },
+    "pageActions": {
+        "message": "Page Actions"
+    },
+    "smartRedact": {
+        "message": "Smart Redact"
+    },
+    "blackoutAll": {
+        "message": "Blackout All"
+    },
+    "reset": {
+        "message": "Reset"
+    },
+    "undo": {
+        "message": "Undo"
+    },
+    "redo": {
+        "message": "Redo"
+    },
+    "redactionSettings": {
+        "message": "Redaction Settings"
+    },
+    "redactionMode": {
+        "message": "Redaction Mode"
+    },
+    "btnPoetry": {
+        "message": "Poetry"
+    },
+    "btnPrivacy": {
+        "message": "Privacy"
+    },
+    "btnRandom": {
+        "message": "Random"
+    },
+    "intensity": {
+        "message": "Intensity"
+    },
+    "btnLight": {
+        "message": "Light"
+    },
+    "btnMedium": {
+        "message": "Medium"
+    },
+    "btnHeavy": {
+        "message": "Heavy"
+    },
+    "keepVisible": {
+        "message": "Keep Visible"
+    },
+    "chkProperNouns": {
+        "message": "Proper Nouns (Names, Places)"
+    },
+    "chkLongWords": {
+        "message": "Long Words (4+ chars)"
+    },
+    "chkNumbers": {
+        "message": "Numbers & Dates"
+    },
+    "footerThanks": {
+        "message": "Thanks for your support!"
+    },
+    "msgCannotRun": {
+        "message": "Cannot run on this page"
+    },
+    "msgReload": {
+        "message": "Reload page and try again"
+    },
+    "msgCannotAccess": {
+        "message": "Cannot access tab"
+    },
+    "msgCannotUndo": {
+        "message": "Cannot undo"
+    },
+    "msgCannotRedo": {
+        "message": "Cannot redo"
+    }
+}
