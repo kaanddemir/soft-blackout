@@ -4,7 +4,7 @@
         "description": "Name of the extension"
     },
     "extensionDescription": {
-        "message": "Hide sensitive content with intelligent redaction modes. Privacy-first, runs locally.",
+        "message": "Instantly hide text on webpages with smart masking for focus and clean screen sharing.",
         "description": "Description of the extension"
     },
     "manualMode": {
