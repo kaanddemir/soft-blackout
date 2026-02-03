@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Mode presets for checkboxes
   const modePresets = {
     poetry: { properNouns: true, longWords: true, numbers: false },
-    privacy: { properNouns: false, longWords: true, numbers: false }, // Hide sensitive data
+    privacy: { properNouns: false, longWords: true, numbers: false }, // Hide private information
     random: { properNouns: false, longWords: false, numbers: false }  // Pure random
   };
 

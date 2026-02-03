@@ -377,7 +377,7 @@ if (window.__softBlackoutInjected) {
 
         switch (mode) {
             case 'privacy':
-                // Privacy mode: Hide sensitive data, keep common words
+                // Privacy mode: Hide private information, keep common words
                 baseMinGap = 2;
                 minWordLength = 3;
                 showChance = 0.7; // Show more common words
@@ -448,7 +448,7 @@ if (window.__softBlackoutInjected) {
 
                     // Mode-specific logic
                     if (mode === 'privacy') {
-                        // Privacy: Redact proper nouns and numbers (sensitive data)
+                        // Privacy: Redact proper nouns and numbers (private information)
                         if (isProper || hasNumber) {
                             shouldRedact = true;
                         } else if (part.length < 4) {

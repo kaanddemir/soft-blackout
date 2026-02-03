@@ -5,7 +5,7 @@
 </div>
 
 ## Overview
-Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide sensitive content or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
+Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide private information or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
 
 ## Features
 - **Smart Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
@@ -29,7 +29,7 @@ Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help 
 4. **Interact**: Double-click redacted blocks to peek at the content, or use Undo/Redo to fine-tune the result.
 
 ## Use Cases
-- **Privacy Protection**: Obscure names, emails, and sensitive info before sharing screen captures.
+- **Privacy Protection**: Obscure names, emails, and private information before sharing screen captures.
 - **Content Focus**: Black out distractions to focus purely on the text that matters.
 - **Creative Writing**: Turn news articles or blog posts into unique pieces of blackout poetry.
 - **Testing**: Developers can use it to test UI layouts with variable text visibility.
