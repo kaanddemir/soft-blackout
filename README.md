@@ -8,7 +8,7 @@
 Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide private information or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
 
 ## Features
-- **Smart Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
+- **Quick Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
 - **Manual Control**: Click and drag to selectively redact specific sentences or paragraphs.
 - **Customizable Intensity**: Adjust redaction levels (Light, Medium, Heavy) to suit your needs.
 - **Smart Filters**: Choose to keep proper nouns, long words, or numbers visible while redacting the rest.
@@ -24,7 +24,7 @@ Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help 
 1. **Activate**: Click the Soft Blackout icon in your browser toolbar.
 2. **Choose Mode**:
    - Toggle **Manual Mode** to redact by selecting text with your mouse.
-   - Use **Smart Redact** to apply automatic algorithms based on your settings.
+   - Use **Quick Redact** to apply automatic algorithms based on your settings.
 3. **Customize**: Click the gear icon to adjust intensity and filters (e.g., maintain names or dates).
 4. **Interact**: Double-click redacted blocks to peek at the content, or use Undo/Redo to fine-tune the result.
 

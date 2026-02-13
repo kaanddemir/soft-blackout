@@ -4,7 +4,7 @@
         "description": "Name of the extension"
     },
     "extensionDescription": {
-        "message": "Instantly hide text on webpages with smart masking for focus and clean screen sharing.",
+        "message": "Adds a visual blackout overlay for focused screen sharing.",
         "description": "Description of the extension"
     },
     "manualMode": {
@@ -14,7 +14,7 @@
         "message": "Page Actions"
     },
     "smartRedact": {
-        "message": "Smart Redact"
+        "message": "Quick Redact"
     },
     "blackoutAll": {
         "message": "Blackout All"

@@ -3,7 +3,7 @@
         "message": "Soft Blackout"
     },
     "extensionDescription": {
-        "message": "Web sayfalarındaki metinleri anında gizleyin. Akıllı gizleme odak ve temiz ekran paylaşımı sağlar."
+        "message": "Odaklı ekran paylaşımı için görsel bir blackout kaplaması ekler."
     },
     "manualMode": {
         "message": "Elle Seç"
@@ -12,7 +12,7 @@
         "message": "Sayfa Araçları"
     },
     "smartRedact": {
-        "message": "Akıllı Gizle"
+        "message": "Hızlı Gizle"
     },
     "blackoutAll": {
         "message": "Her Şeyi Gizle"
