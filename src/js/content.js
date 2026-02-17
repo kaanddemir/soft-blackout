@@ -380,7 +380,7 @@ if (!window.__softBlackoutInjected) {
                 // Privacy mode: Hide private information, keep common words
                 baseMinGap = 2;
                 minWordLength = 3;
-                showChance = 0.7; // Show more common words
+                showChance = 1 - intensity; // Use intensity setting
                 break;
             case 'random':
                 // Random mode: Pure randomness based on intensity
@@ -450,15 +450,24 @@ if (!window.__softBlackoutInjected) {
                     if (mode === 'privacy') {
                         // Privacy: Redact proper nouns and numbers (private information)
                         if (isProper || hasNumber) {
-                            shouldRedact = true;
+                            // Check overrides
+                            if ((isProper && keepProperNouns) || (hasNumber && keepNumbers)) {
+                                shouldRedact = false;
+                            } else {
+                                shouldRedact = true;
+                            }
                         } else if (part.length < 4) {
                             shouldRedact = false; // Keep small common words
                         } else {
                             shouldRedact = Math.random() > showChance;
                         }
                     } else if (mode === 'random') {
-                        // Random: Pure chance based on intensity
-                        shouldRedact = Math.random() > showChance;
+                        // Check overrides for random mode too
+                        if ((isProper && keepProperNouns) || (hasNumber && keepNumbers)) {
+                            shouldRedact = false;
+                        } else {
+                            shouldRedact = Math.random() > showChance;
+                        }
                     } else {
                         // Poetry mode: Smart leapfrog
                         // 1. Keep proper nouns if setting enabled
