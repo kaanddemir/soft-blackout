@@ -4,7 +4,7 @@
         "description": "Name of the extension"
     },
     "extensionDescription": {
-        "message": "Adds a visual overlay to hide content.",
+        "message": "Visually hide selected text on web pages using simple manual controls.",
         "description": "Description of the extension"
     },
     "manualMode": {
