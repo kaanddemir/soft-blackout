@@ -1,5 +1,5 @@
 // Guard against multiple injections
-if (window.__softBlackoutInjected) {
+if (!window.__softBlackoutInjected) {
     window.__softBlackoutInjected = true;
 
     let isRedactionMode = false;
@@ -195,12 +195,12 @@ if (window.__softBlackoutInjected) {
     // ================== END UNDO/REDO SYSTEM ==================
 
     // Selector for text-containing elements - expanded to cover more text
-    const TEXT_ELEMENT_SELECTOR = 'p, article, section, div, li, td, th, blockquote, figcaption, dt, dd, span, h1, h2, h3, h4, h5, h6, label, strong, em, b, i, mark, small, cite, time, address, caption, a';
+    const TEXT_ELEMENT_SELECTOR = 'p, article, section, div, li, td, th, blockquote, figcaption, dt, dd, span, h1, h2, h3, h4, h5, h6, label, strong, em, b, i, mark, small, cite, time, address, caption, a, button';
 
     // Elements to skip (usually contain code, scripts, or are interactive)
     const SKIP_ELEMENTS = new Set([
         'SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'OBJECT', 'EMBED',
-        'INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A',
+        'INPUT', 'TEXTAREA', 'SELECT',
         'CODE', 'PRE', 'KBD', 'SAMP', 'VAR',
         'SVG', 'CANVAS', 'VIDEO', 'AUDIO', 'IMG'
     ]);
@@ -208,7 +208,7 @@ if (window.__softBlackoutInjected) {
     // Elements to skip for Blackout All (links are allowed)
     const SKIP_ELEMENTS_BLACKOUT_ALL = new Set([
         'SCRIPT', 'STYLE', 'NOSCRIPT', 'IFRAME', 'OBJECT', 'EMBED',
-        'INPUT', 'TEXTAREA', 'SELECT', 'BUTTON',
+        'INPUT', 'TEXTAREA', 'SELECT',
         'CODE', 'PRE', 'KBD', 'SAMP', 'VAR',
         'SVG', 'CANVAS', 'VIDEO', 'AUDIO', 'IMG'
     ]);
@@ -377,10 +377,10 @@ if (window.__softBlackoutInjected) {
 
         switch (mode) {
             case 'privacy':
-                // Privacy mode: Hide sensitive data, keep common words
+                // Privacy mode: Hide private information, keep common words
                 baseMinGap = 2;
                 minWordLength = 3;
-                showChance = 0.7; // Show more common words
+                showChance = 1 - intensity; // Use intensity setting
                 break;
             case 'random':
                 // Random mode: Pure randomness based on intensity
@@ -402,8 +402,8 @@ if (window.__softBlackoutInjected) {
         const numberPattern = /\d/;
 
         elements.forEach(el => {
-            // Skip if already has redacted content or is empty
-            if (el.querySelector('.blackout-redacted') || el.innerText.trim().length === 0) return;
+            // Skip if empty
+            if (el.innerText.trim().length === 0) return;
 
             const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
                 acceptNode: (node) => {
@@ -448,17 +448,26 @@ if (window.__softBlackoutInjected) {
 
                     // Mode-specific logic
                     if (mode === 'privacy') {
-                        // Privacy: Redact proper nouns and numbers (sensitive data)
+                        // Privacy: Redact proper nouns and numbers (private information)
                         if (isProper || hasNumber) {
-                            shouldRedact = true;
+                            // Check overrides
+                            if ((isProper && keepProperNouns) || (hasNumber && keepNumbers)) {
+                                shouldRedact = false;
+                            } else {
+                                shouldRedact = true;
+                            }
                         } else if (part.length < 4) {
                             shouldRedact = false; // Keep small common words
                         } else {
                             shouldRedact = Math.random() > showChance;
                         }
                     } else if (mode === 'random') {
-                        // Random: Pure chance based on intensity
-                        shouldRedact = Math.random() > showChance;
+                        // Check overrides for random mode too
+                        if ((isProper && keepProperNouns) || (hasNumber && keepNumbers)) {
+                            shouldRedact = false;
+                        } else {
+                            shouldRedact = Math.random() > showChance;
+                        }
                     } else {
                         // Poetry mode: Smart leapfrog
                         // 1. Keep proper nouns if setting enabled
@@ -540,16 +549,25 @@ if (window.__softBlackoutInjected) {
         return count;
     }
 
+    function handlePreventClick(e) {
+        if (isRedactionMode && e.target.closest('a, button')) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }
+
     function enableRedaction() {
         isRedactionMode = true;
         document.body.classList.add('blackout-mode-active');
         document.addEventListener('mouseup', handleSelection);
+        document.addEventListener('click', handlePreventClick, true);
     }
 
     function disableRedaction() {
         isRedactionMode = false;
         document.body.classList.remove('blackout-mode-active');
         document.removeEventListener('mouseup', handleSelection);
+        document.removeEventListener('click', handlePreventClick, true);
     }
 
     // Global double-click listener for un-redacting

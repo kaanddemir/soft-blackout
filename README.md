@@ -5,10 +5,10 @@
 </div>
 
 ## Overview
-Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide sensitive content or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
+Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide private information or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
 
 ## Features
-- **Smart Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
+- **Quick Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
 - **Manual Control**: Click and drag to selectively redact specific sentences or paragraphs.
 - **Customizable Intensity**: Adjust redaction levels (Light, Medium, Heavy) to suit your needs.
 - **Smart Filters**: Choose to keep proper nouns, long words, or numbers visible while redacting the rest.
@@ -24,12 +24,12 @@ Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help 
 1. **Activate**: Click the Soft Blackout icon in your browser toolbar.
 2. **Choose Mode**:
    - Toggle **Manual Mode** to redact by selecting text with your mouse.
-   - Use **Smart Redact** to apply automatic algorithms based on your settings.
+   - Use **Quick Redact** to apply automatic algorithms based on your settings.
 3. **Customize**: Click the gear icon to adjust intensity and filters (e.g., maintain names or dates).
 4. **Interact**: Double-click redacted blocks to peek at the content, or use Undo/Redo to fine-tune the result.
 
 ## Use Cases
-- **Privacy Protection**: Obscure names, emails, and sensitive info before sharing screen captures.
+- **Privacy Protection**: Obscure names, emails, and private information before sharing screen captures.
 - **Content Focus**: Black out distractions to focus purely on the text that matters.
 - **Creative Writing**: Turn news articles or blog posts into unique pieces of blackout poetry.
 - **Testing**: Developers can use it to test UI layouts with variable text visibility.
@@ -49,7 +49,7 @@ Soft Blackout is built with a strictly **privacy-first** architecture:
 ## Installation
 
 ### From Chrome Web Store
-[Install Blackout](https://chromewebstore.google.com/detail/soft-blackout/oeefplhfabbdadpicjbgbiapoadppkpo)
+[Install Soft Blackout](https://chromewebstore.google.com/detail/soft-blackout/oeefplhfabbdadpicjbgbiapoadppkpo)
 
 ### Manual Installation
 1. Clone or download this repository to your local machine.
@@ -74,5 +74,8 @@ Contributions are welcome! If you have ideas for improvements or bug fixes, plea
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
 
----
-Built by heykaan.dev
+<br>
+
+<div align="center">
+  <p>Built by <a href="https://heykaan.dev">heykaan.dev</a></p>
+</div>

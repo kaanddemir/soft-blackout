@@ -4,7 +4,7 @@
         "description": "Name of the extension"
     },
     "extensionDescription": {
-        "message": "Hide sensitive content with intelligent redaction modes. Privacy-first, runs locally.",
+        "message": "Visually hide selected text on web pages using simple manual controls.",
         "description": "Description of the extension"
     },
     "manualMode": {
@@ -14,7 +14,7 @@
         "message": "Page Actions"
     },
     "smartRedact": {
-        "message": "Smart Redact"
+        "message": "Quick Redact"
     },
     "blackoutAll": {
         "message": "Blackout All"
