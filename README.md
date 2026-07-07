@@ -4,8 +4,10 @@
   <img src="icons/icon128.png" alt="Soft Blackout Logo" width="128" height="128">
 </div>
 
+Lightweight, privacy-first redaction tools for any web page.
+
 ## Overview
-Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help you hide private information or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or unleash your creativity with blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, ensuring your browsing experience remains fast and private.
+Soft Blackout is a Chrome Extension designed to help you hide private information or remove distractions from any web page. Whether you need to obscure personal data before taking a screenshot, focus on reading without clutter, or create blackout poetry, Soft Blackout provides the tools to do it securely and locally. It runs only when you want it to, keeping your browsing experience fast and private.
 
 ## Features
 - **Quick Redaction**: Automatically redact text using intelligent modes like Poetry, Privacy, and Random.
@@ -15,18 +17,18 @@ Soft Blackout is a lightweight, privacy-first Chrome Extension designed to help 
 - **Blackout All**: A single-click option to completely obscure everything on the page.
 - **History Management**: Full Undo and Redo capabilities to experiment fearlessly.
 - **Interactive Reveal**: Double-click any redacted area to reveal the text underneath.
-
-## What's New in v1.1.1
-- **Turkish Language Support**: Soft Blackout is now fully localized in Turkish! The extension automatically detects your browser language.
-
+- **Turkish Language Support**: Soft Blackout is fully localized in Turkish and automatically detects your browser language.
 
 ## How It Works
 1. **Activate**: Click the Soft Blackout icon in your browser toolbar.
 2. **Choose Mode**:
    - Toggle **Manual Mode** to redact by selecting text with your mouse.
    - Use **Quick Redact** to apply automatic algorithms based on your settings.
-3. **Customize**: Click the gear icon to adjust intensity and filters (e.g., maintain names or dates).
+3. **Customize**: Click the gear icon to adjust intensity and filters, such as maintaining names or dates.
 4. **Interact**: Double-click redacted blocks to peek at the content, or use Undo/Redo to fine-tune the result.
+
+## Localization
+Soft Blackout is fully localized in English and Turkish. The extension automatically detects your browser language.
 
 ## Use Cases
 - **Privacy Protection**: Obscure names, emails, and private information before sharing screen captures.
@@ -40,6 +42,12 @@ Soft Blackout is built with a strictly **privacy-first** architecture:
 - **No Tracking**: The extension collects absolutely no user data or analytics.
 - **On-Demand**: Scripts are only injected when you explicitly activate the extension, preserving your browser's performance and security.
 - See our [Privacy Policy](PRIVACY_POLICY.md) for more details.
+
+## Permissions
+Soft Blackout requests the minimal permissions it needs to run:
+- `activeTab`: Allows the extension to work on the current tab after you activate it.
+- `scripting`: Injects the redaction script only when you explicitly use the extension.
+- `storage`: Saves extension settings such as mode, intensity, and filters locally in your browser.
 
 ## Tech Stack
 - **Manifest V3**: Compliant with the latest Chrome Extension standards for security and performance.
@@ -58,10 +66,17 @@ Soft Blackout is built with a strictly **privacy-first** architecture:
 4. Click **Load unpacked**.
 5. Select the `Soft Blackout` directory you just downloaded.
 
-## Roadmap
-- [ ] **Export to Image**: Direct feature to save the redacted page as a PNG.
-- [ ] **Custom Word Lists**: Add specific words/phrases to an "always redact" or "never redact" list.
-- [ ] **Theme Support**: Custom colors for redaction blocks (e.g., pixelated, blur, or colored bars).
+## Project Structure
+- `manifest.json`: Chrome Extension manifest and permission configuration.
+- `popup.html`: Extension popup interface.
+- `src/js/popup.js`: Popup behavior and settings logic.
+- `src/js/content.js`: Web page redaction logic.
+- `src/css/styles.css`: Extension styling.
+- `_locales/en/messages.json`: English localization strings.
+- `_locales/tr/messages.json`: Turkish localization strings.
+- `icons/icon16.png`, `icons/icon32.png`, `icons/icon48.png`, `icons/icon128.png`: Extension icons.
+- `PRIVACY_POLICY.md`: Privacy policy.
+- `LICENSE`: MIT License.
 
 ## Contributing
 Contributions are welcome! If you have ideas for improvements or bug fixes, please feel free to:
