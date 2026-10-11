@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Soft Blackout compatibility fixture</title>
+  <style>
+    body { margin: 0; font: 17px/1.5 Georgia, serif; color: #222; background: #fbf7ef; }
+    .sticky { position: sticky; top: 0; z-index: 10; background: #1d3557; color: #fff; padding: 10px 24px; }
+    .sticky a { color: #fff; margin-right: 16px; }
+    article { max-width: 720px; margin: 0 auto; padding: 24px; }
+    .columns { columns: 2; column-gap: 32px; }
+    .tinted { background: #e9f1e4; color: #2a4a1f; padding: 8px; text-shadow: 0 1px 1px rgba(0,0,0,.3); }
+    .dense { line-height: 1.05; font-size: 13px; }
+    table { border-collapse: collapse; width: 100%; font: 14px/1.3 Arial, sans-serif; }
+    td, th { border: 1px solid #ccc; padding: 4px 6px; }
+  </style>
+</head>
+<body>
+  <header class="sticky"><a id="nav-home" href="#home">Home</a><a id="nav-route" href="/compat.html?route=2">Route</a></header>
+  <article>
+    <h1 id="headline">Local council approves riverside library</h1>
+    <p id="lede">The new building, announced on <time>11 October 2026</time>, will open with <a id="inline-link" href="#library">reading rooms</a> and a <strong>children's <em>wing</em></strong>.</p>
+    <p id="bidi">Readers wrote: «İstanbul'da güzel bir gün» and שלום עולם in the same sentence.</p>
+    <div class="columns"><p id="col-a">Column one discusses budgets, timelines, and the consultation that took place over two years with residents.</p><p id="col-b">Column two lists contacts: press@council.example, https://council.example/library?id=7#plan, and +44 20 7946 0958.</p></div>
+    <p id="tinted" class="tinted">Tinted background text with a subtle text shadow.</p>
+    <p id="dense" class="dense">Dense line height text that wraps across several lines in a narrow measure to stress highlight geometry and reflow behaviour.</p>
+    <table id="table"><thead><tr><th>Item</th><th>Contact</th></tr></thead><tbody id="tbody"></tbody></table>
+    <ul id="list"></ul>
+    <form id="form" onsubmit="event.preventDefault(); document.getElementById('form-status').textContent='submitted:' + new FormData(this).get('name');">
+      <label>Name <input id="name" name="name" value="Ada"></label>
+      <textarea id="notes">Textarea text is never masked.</textarea>
+      <button id="submit">Send</button><output id="form-status"></output>
+    </form>
+    <section id="lazy"></section>
+    <p id="framework">Framework text <span id="fw-span">alpha bravo</span> charlie.</p>
+    <compat-card id="card"></compat-card>
+    <p id="route-label">route:1</p>
+  </article>
+  <script>
+    const tbody = document.getElementById('tbody');
+    for (let i = 0; i < 40; i++) tbody.insertAdjacentHTML('beforeend', `<tr><td>Row ${i} item</td><td>row${i}@data.example</td></tr>`);
+    const list = document.getElementById('list');
+    for (let i = 0; i < 60; i++) list.insertAdjacentHTML('beforeend', `<li>List entry ${i} with ordinary words</li>`);
+    customElements.define('compat-card', class extends HTMLElement { constructor() { super(); this.attachShadow({ mode: 'open' }).innerHTML = '<p id="card-text">Shadow card text inside a component.</p>'; } });
+    setTimeout(() => { document.getElementById('lazy').innerHTML = '<p id="lazy-text">Lazy text arrived after load.</p>'; }, 50);
+    window.replaceFramework = () => { const span = document.getElementById('fw-span'); span.replaceChildren(document.createTextNode('alpha bravo')); };
+    window.routeTo = (n) => { history.pushState({}, '', `?route=${n}`); document.getElementById('route-label').textContent = `route:${n}`; };
+    document.getElementById('nav-route').addEventListener('click', (event) => { event.preventDefault(); window.routeTo(2); });
+    window.clicks = 0; document.getElementById('inline-link').addEventListener('click', () => { window.clicks++; });
+  </script>
+</body>
+</html>

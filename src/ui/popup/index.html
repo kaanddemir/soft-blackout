@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Soft Blackout</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<header class="header"><h1>Soft Blackout</h1><button id="settingsBtn" class="icon-btn" type="button" aria-label="Settings" aria-expanded="false" aria-controls="settingsPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6"/></svg></button></header>
+<section id="settingsPanel" class="settings" aria-labelledby="settingsTitle" hidden>
+  <div class="settings-head"><h2 id="settingsTitle">Settings</h2><button id="closeSettingsBtn" class="icon-btn" type="button" aria-label="Close settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></button></div>
+  <fieldset><legend>Theme</legend><div class="segmented theme-options"><label><input type="radio" name="theme" value="system"><span>System</span></label><label><input type="radio" name="theme" value="light"><span>Light</span></label><label><input type="radio" name="theme" value="dark"><span>Dark</span></label></div></fieldset>
+</section>
+<main>
+<div class="tabs segmented" role="tablist" aria-label="Blackout mode"><button id="manualTab" role="tab" aria-selected="true" aria-controls="manualPanel" data-mode="manual">Manual</button><button id="poetryTab" role="tab" aria-selected="false" aria-controls="poetryPanel" data-mode="poetry">Poetry</button><button id="patternTab" role="tab" aria-selected="false" aria-controls="patternPanel" data-mode="pattern-mask">Pattern Mask</button></div>
+
+<section id="manualPanel" class="mode-panel" role="tabpanel" aria-labelledby="manualTab">
+  <p class="description">Select text on the page to hide it.</p>
+  <button id="manualActionBtn" class="btn primary block" type="button">Start selecting</button>
+  <label class="check"><input id="autoMask" type="checkbox"><span>Mask on select</span></label>
+</section>
+
+<section id="poetryPanel" class="mode-panel" role="tabpanel" aria-labelledby="poetryTab" hidden>
+  <p class="description">Keep chosen words; hide the rest.</p>
+  <div id="poetryDraftControls" class="workflow" hidden>
+    <p id="poetryStats" class="sr-only" aria-live="polite">0 kept · 0 blocks</p>
+    <button id="applyPoetryBtn" class="btn primary block" type="button">Apply composition</button>
+  </div>
+  <button id="poetryActionBtn" class="btn primary block" type="button">Start composing</button>
+  <button id="editPoetryBtn" class="btn secondary block" type="button" hidden>Edit composition</button>
+  <div class="link-row"><button id="clearPoetryBtn" class="link" type="button" hidden>Clear pending</button><button id="cancelPoetryEditBtn" class="link" type="button" hidden>Cancel editing</button></div>
+</section>
+
+<section id="patternPanel" class="mode-panel" role="tabpanel" aria-labelledby="patternTab" hidden>
+  <p class="description">Visual only. The original text stays in the page.</p>
+  <fieldset class="segmented chips"><legend class="sr-only">Patterns to find</legend><label title="Email addresses"><input id="patternEmail" type="checkbox"><span>Email</span></label><label title="Web URLs"><input id="patternUrl" type="checkbox"><span>URL</span></label><label title="Phone numbers"><input id="patternPhone" type="checkbox"><span>Phone</span></label></fieldset>
+  <div id="patternResults" class="workflow" hidden aria-live="polite">
+    <p id="patternCounts" class="meta"></p>
+    <button id="applyPatternsBtn" class="btn primary block" type="button">Apply masks</button>
+  </div>
+  <button id="scanPatternsBtn" class="btn primary block" type="button">Scan page</button>
+  <div id="patternLinks" class="link-row"><button id="cancelPatternBtn" class="link" type="button" hidden>Cancel scan</button></div>
+</section>
+
+<section class="styles" aria-labelledby="stylesTitle">
+  <h2 id="stylesTitle">Blackout style</h2>
+  <div class="style-options" role="radiogroup" aria-labelledby="stylesTitle"><button class="style-choice" type="button" data-style="solid" role="radio" aria-checked="true"><span class="preview solid" aria-hidden="true"></span>Solid</button><button class="style-choice" type="button" data-style="marker" role="radio" aria-checked="false"><span class="preview marker" aria-hidden="true"></span>Marker</button></div>
+  <div id="colorChoices" class="colors" role="radiogroup" aria-label="Blackout color"></div>
+</section>
+
+<p id="status" class="status" aria-live="polite"></p>
+<footer><div class="history"><button id="undoBtn" class="icon-btn history-btn" type="button" aria-label="Undo" title="Undo" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button><button id="redoBtn" class="icon-btn history-btn" type="button" aria-label="Redo" title="Redo" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14l5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button></div><button id="resetRedactBtn" class="link" type="button">Reset page</button></footer>
+</main>
+<script type="module" src="popup.js"></script></body></html>

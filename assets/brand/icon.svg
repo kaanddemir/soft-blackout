@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- Soft Blackout mark: a warm-paper card held by an ink outline, with three blacked-out rows of a poem and
+       one kept word in muted terracotta. The paper fill carries the mark on dark toolbars, the ink outline on
+       light ones. Flat colours from the product palette; 96×96 artwork centred on the 128 canvas. -->
+  <rect x="19.5" y="19.5" width="89" height="89" rx="18" fill="#F7F4EC" stroke="#242321" stroke-width="7"/>
+  <rect x="36" y="38" width="56" height="13" rx="3" fill="#242321"/>
+  <rect x="36" y="58" width="20" height="13" rx="6.5" fill="#A65D51"/>
+  <rect x="62" y="58" width="30" height="13" rx="3" fill="#242321"/>
+  <rect x="36" y="78" width="38" height="13" rx="3" fill="#242321"/>
+</svg>

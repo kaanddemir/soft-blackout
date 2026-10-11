@@ -1,66 +1,67 @@
-# Privacy Policy
+# Soft Blackout Privacy Policy
 
-**Last Updated:** January 28, 2026
+Last updated: October 11, 2026
 
-## Soft Blackout Chrome Extension
+Soft Blackout is a Chrome extension that visually masks text on the page you are viewing with three modes: **Manual**, **Poetry** and **Pattern Mask**. Page processing happens locally in your browser.
 
-### Overview
-Soft Blackout is a browser extension that allows users to selectively redact text on web pages. We are committed to protecting your privacy and follow a **user-initiated** approach — the extension only runs when you explicitly interact with it.
+## Summary
 
-### Data Collection
-**We do not collect any personal data.**
+- Soft Blackout makes no network requests. It has no servers, analytics, advertising, telemetry or tracking code.
+- Nothing Soft Blackout processes is sent to the developer or to any third party.
+- Soft Blackout runs on a tab only after you use it there.
+- Page text, your selections, kept words, detected matches, URLs and mask history are never stored.
+- Only your settings are saved, on this device.
 
-This extension:
-- Does NOT collect personal information
-- Does NOT track your browsing history
-- Does NOT send any data to external servers
-- Does NOT use analytics or tracking tools
-- Does NOT run automatically on any page
+## Visual masking is not redaction
 
-### Data Storage
-The extension uses Chrome's local storage API (`chrome.storage.local`) solely to:
-- Save your technical preferences (e.g., redaction mode, intensity settings)
+Soft Blackout draws masks over text on screen. The original text stays in the page, where the website, copy and paste, screen readers, browser developer tools and other extensions can still read it. Do not rely on Soft Blackout to remove confidential information from a page, and check any screenshot before sharing it.
 
-This data is stored **locally on your device only** and is never transmitted anywhere.
+## What Soft Blackout processes
 
-### How It Works
-- The extension **does not inject any scripts automatically** into web pages
-- Scripts are only injected **after you click** a button or toggle in the popup
-- The extension only accesses the **currently active tab** after a user gesture
-- No broad host permissions or `<all_urls>` access is requested
+**Page text.** When you use Soft Blackout on a page, its runtime reads the text you select (Manual and Poetry) or the text in the page's reading blocks (Pattern Mask scan) to place masks. Pattern Mask looks for email addresses, URLs and phone numbers in that text; the matches are only counted and masked, never saved.
 
-### Permissions
-The extension requests **minimal permissions**:
+**Temporary state.** Masks, Undo and Redo history, a Poetry draft and pending scan results are kept only in the page's memory. They are discarded when the page is reloaded, navigated away from or closed, or when you choose **Reset page**.
 
-| Permission | Purpose |
-|------------|---------|
-| `activeTab` | Access only the current tab, and only after you interact with the extension |
-| `scripting` | Dynamically inject the redaction functionality when you activate it |
-| `storage` | Remember your settings locally |
+## Where data is kept
 
-### Third-Party Services
-This extension does not use any third-party services, APIs, advertisement networks, or analytics.
+| Data | Where | Removed when |
+| --- | --- | --- |
+| Theme, last selected mode, Mask on select, pattern categories, mask style and colour | `chrome.storage.local` on this device | Soft Blackout is uninstalled |
+| Masks, history, Poetry drafts and scan results | Memory of the page's Soft Blackout runtime | The page is reloaded, navigated away from or closed, or you choose **Reset page** |
 
-### Data Sharing
-Since we do not collect any data, we have no personal information to share, sell, or trade with any third parties.
+Settings are not synced to other devices. The page runtime reads the theme and Mask on select settings only so its on-page controls match the popup.
 
-### Security
-Because Soft Blackout runs entirely locally on your device and does not transmit data over the internet, your exposure to remote security risks via this extension is non-existent.
+## Permissions
 
-### User Control
-You have full control over the extension and your data:
-- **On-Demand**: The extension only runs when you ask it to.
-- **Data Removal**: Uninstalling the extension automatically removes all locally stored preferences.
-- **Transparency**: You can view the source code to verify these claims.
+| Permission | Why it is needed |
+| --- | --- |
+| `activeTab` | Access the current tab, only after you use Soft Blackout there |
+| `scripting` | Load the masking runtime into that tab |
+| `storage` | Save your settings on this device |
 
-### Changes to This Policy
-If we make changes to this privacy policy, we will update the "Last Updated" date above.
+Soft Blackout requests no host permissions, has no background service worker and no content scripts that run automatically. It cannot run on Chrome's own pages, the Chrome Web Store or local files.
 
-### Contact
-If you have any questions about this privacy policy, please open an issue on our GitHub repository.
+## Network and external services
 
-### Summary
-Soft Blackout works entirely offline and locally. It only runs when you explicitly use it, and your data never leaves your device.
+Soft Blackout does not use cookies, remote code, artificial intelligence services or any other external service, and it does not evaluate generated code. Processing everything locally avoids sending page content anywhere, but it does not remove browser, website, device or extension risks. Chrome itself may handle installation and updates under Google's policies.
+
+## Sharing
+
+Soft Blackout does not transmit, sell or share any data. The developer never receives it.
+
+Soft Blackout's use of information received through Chrome APIs adheres to the [Chrome Web Store User Data Policy](https://developer.chrome.com/docs/webstore/program-policies/user-data-faq), including the Limited Use requirements. Data is used only to provide the masking features described here.
+
+## Your control
+
+- Masks are created only when you choose **Mask**, **Apply composition** or **Apply masks**.
+- **Undo**, **Redo** and **Reset page** change or remove masks at any time.
+- Reloading or leaving the page removes all of Soft Blackout's masks and temporary state from it.
+- Uninstalling Soft Blackout removes the extension and its storage.
+
+## Changes and contact
+
+Changes to this policy will be published in this file with an updated date and noted in the [Changelog](CHANGELOG.md). Questions can be sent to [heykaan.dev@gmail.com](mailto:heykaan.dev@gmail.com) or raised on the project's GitHub issue tracker: <https://github.com/kaanddemir/soft-blackout/issues>.
 
 ---
-Built by heykaan.dev
+
+Built by [heykaan.dev](https://heykaan.dev)

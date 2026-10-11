@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Soft Blackout engine fixture</title>
+  <style>
+    body { margin: 24px; font: 24px/1.45 Arial, sans-serif; color: #d11; }
+    main { width: 620px; }
+    #dark { background: #111; color: #fff; padding: 12px; }
+    #responsive { width: 520px; }
+    .large { font-size: 40px; color: #1756a9; }
+  </style>
+</head>
+<body>
+  <main>
+    <p id="partial">alpha partialword omega</p>
+    <p id="nested">before <strong>nested <em>inline target</em></strong> after</p>
+    <p id="duplicate">repeat middle repeat</p>
+    <p id="responsive">responsive text wraps across several lines when the viewport becomes narrow enough to force a reflow</p>
+    <p id="dark">light letters on a dark webpage background</p>
+    <p class="large" id="large">Mixed size and color</p>
+    <p id="patterns">Email hello@example.com, URL https://example.org/path?q=1#top, phone +90 532 123 45 67, plain 1234567890, date 2026-10-11.</p>
+    <p id="cross-pattern">Cross support@<strong>example.co.uk</strong> works.</p>
+    <nav><p id="nav-pattern">hidden@example.com</p></nav>
+    <a href="#safe" id="link">link remains interactive</a>
+    <button id="control">control is excluded</button>
+    <div id="shadow-host"></div>
+    <div id="closed-host"></div>
+    <iframe id="frame" srcdoc="<p>unsupported frame text</p>"></iframe>
+  </main>
+  <script>
+    const open = document.querySelector('#shadow-host').attachShadow({ mode: 'open' });
+    open.innerHTML = '<p id="shadow-text">open shadow target</p>';
+    const closed = document.querySelector('#closed-host').attachShadow({ mode: 'closed' });
+    closed.textContent = 'closed shadow text';
+  </script>
+</body>
+</html>
